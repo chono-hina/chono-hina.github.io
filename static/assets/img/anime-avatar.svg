@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="hairGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDBCB4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F8BBD9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景圆形 -->
+  <circle cx="150" cy="150" r="145" fill="#FFE4E1" stroke="#FF69B4" stroke-width="3"/>
+  
+  <!-- 装饰性星星背景 -->
+  <g opacity="0.3">
+    <path d="M50,50 L52,58 L60,58 L54,62 L56,70 L50,66 L44,70 L46,62 L40,58 L48,58 Z" fill="#FFB6C1"/>
+    <path d="M250,80 L252,88 L260,88 L254,92 L256,100 L250,96 L244,100 L246,92 L240,88 L248,88 Z" fill="#DDA0DD"/>
+    <path d="M80,250 L82,258 L90,258 L84,262 L86,270 L80,266 L74,270 L76,262 L70,258 L78,258 Z" fill="#98FB98"/>
+    <path d="M220,240 L222,248 L230,248 L224,252 L226,260 L220,256 L214,260 L216,252 L210,248 L218,248 Z" fill="#FFB6C1"/>
+  </g>
+  
+  <!-- 头发后层 -->
+  <path d="M150,40 Q120,35 100,60 Q85,80 90,110 Q95,140 110,160 Q130,180 150,185 Q170,180 190,160 Q205,140 210,110 Q215,80 200,60 Q180,35 150,40" 
+        fill="url(#hairGradient)" filter="url(#softGlow)"/>
+  
+  <!-- 脸部 -->
+  <ellipse cx="150" cy="140" rx="55" ry="65" fill="url(#skinGradient)" filter="url(#softGlow)"/>
+  
+  <!-- 头发前层 -->
+  <path d="M150,45 Q125,40 110,65 Q100,85 105,105 Q110,125 120,140 L130,145 Q140,150 150,148 Q160,150 170,145 L180,140 Q190,125 195,105 Q200,85 190,65 Q175,40 150,45" 
+        fill="url(#hairGradient)" opacity="0.9"/>
+  
+  <!-- 刘海 -->
+  <path d="M120,70 Q135,65 150,68 Q165,65 180,70 Q170,75 150,78 Q130,75 120,70" fill="url(#hairGradient)"/>
+  
+  <!-- 眼睛 -->
+  <g id="leftEye">
+    <ellipse cx="130" cy="125" rx="12" ry="15" fill="white"/>
+    <ellipse cx="130" cy="125" rx="8" ry="12" fill="url(#eyeGradient)"/>
+    <circle cx="130" cy="123" r="4" fill="#000"/>
+    <circle cx="132" cy="121" r="1.5" fill="white"/>
+    <path d="M118,115 Q130,110 142,115" stroke="#8B4513" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g id="rightEye">
+    <ellipse cx="170" cy="125" rx="12" ry="15" fill="white"/>
+    <ellipse cx="170" cy="125" rx="8" ry="12" fill="url(#eyeGradient)"/>
+    <circle cx="170" cy="123" r="4" fill="#000"/>
+    <circle cx="172" cy="121" r="1.5" fill="white"/>
+    <path d="M158,115 Q170,110 182,115" stroke="#8B4513" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- 腮红 -->
+  <ellipse cx="110" cy="140" rx="8" ry="5" fill="#FFB6C1" opacity="0.6"/>
+  <ellipse cx="190" cy="140" rx="8" ry="5" fill="#FFB6C1" opacity="0.6"/>
+  
+  <!-- 鼻子 -->
+  <ellipse cx="150" cy="135" rx="2" ry="3" fill="#F8BBD9" opacity="0.8"/>
+  
+  <!-- 嘴巴 -->
+  <path d="M145,155 Q150,160 155,155" stroke="#FF69B4" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- 头发装饰 - 发夹 -->
+  <g transform="translate(120,80)">
+    <ellipse cx="0" cy="0" rx="8" ry="4" fill="#FF69B4" filter="url(#glow)"/>
+    <circle cx="-3" cy="0" r="1.5" fill="white"/>
+    <circle cx="3" cy="0" r="1.5" fill="white"/>
+  </g>
+  
+  <!-- 耳朵 -->
+  <ellipse cx="95" cy="130" rx="8" ry="12" fill="url(#skinGradient)"/>
+  <ellipse cx="205" cy="130" rx="8" ry="12" fill="url(#skinGradient)"/>
+  
+  <!-- 耳环 -->
+  <circle cx="95" cy="135" r="3" fill="#FFD700" filter="url(#glow)"/>
+  <circle cx="205" cy="135" r="3" fill="#FFD700" filter="url(#glow)"/>
+  
+  <!-- 颈部 -->
+  <rect x="135" y="200" width="30" height="20" fill="url(#skinGradient)"/>
+  
+  <!-- 衣服领口 -->
+  <path d="M120,220 Q150,215 180,220 Q175,230 150,235 Q125,230 120,220" fill="#9966CC"/>
+  
+  <!-- 装饰性元素 -->
+  <g opacity="0.7">
+    <!-- 小星星 -->
+    <path d="M60,120 L61,123 L64,123 L62,125 L63,128 L60,126 L57,128 L58,125 L56,123 L59,123 Z" fill="#FFD700" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 60 120; 360 60 120" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M240,160 L241,163 L244,163 L242,165 L243,168 L240,166 L237,168 L238,165 L236,163 L239,163 Z" fill="#FFD700" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 240 160; -360 240 160" dur="5s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- 小心形 -->
+    <path d="M70,200 Q68,198 66,200 Q68,202 70,200 Q72,198 74,200 Q72,202 70,200" fill="#FF69B4" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- 眼睛闪烁动画 -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;1;1" dur="4s" repeatCount="indefinite"/>
+    <rect x="118" y="115" width="24" height="20" fill="url(#skinGradient)"/>
+    <rect x="158" y="115" width="24" height="20" fill="url(#skinGradient)"/>
+  </g>
+</svg>
