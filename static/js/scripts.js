@@ -60,4 +60,26 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
+    // 随机背景图片功能
+    function refreshBackground() {
+        const topSection = document.querySelector('.top-section');
+        if (topSection) {
+            // 添加时间戳确保每次都获取新图片
+            const timestamp = new Date().getTime();
+            const newBgUrl = `https://www.loliapi.com/acg/?t=${timestamp}`;
+            topSection.style.backgroundImage = `url('${newBgUrl}')`;
+        }
+    }
+
+    // 页面加载完成后设置随机背景
+    refreshBackground();
+
+    // 可选：添加双击刷新背景功能
+    const topSection = document.querySelector('.top-section');
+    if (topSection) {
+        topSection.addEventListener('dblclick', refreshBackground);
+        topSection.style.cursor = 'pointer';
+        topSection.title = '双击刷新背景图片';
+    }
+
 });

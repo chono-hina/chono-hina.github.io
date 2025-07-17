@@ -74,6 +74,26 @@ body {
   background: var(--gradient-primary) !important;
   position: relative;
   overflow: hidden;
+  min-height: 400px;
+  background-attachment: fixed;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* 随机背景图片样式优化 */
+.top-section {
+  background-blend-mode: overlay;
+}
+
+.top-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 105, 180, 0.3);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .top-section::before {
@@ -92,10 +112,17 @@ body {
   50% { transform: translateY(-20px); }
 }
 
+.top-section-content {
+  position: relative;
+  z-index: 2;
+}
+
 .top-section-content h2 {
   font-family: 'Cute Font', cursive;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.8);
   animation: glow 2s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 3;
 }
 
 @keyframes glow {
